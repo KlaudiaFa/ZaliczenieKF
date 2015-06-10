@@ -1,0 +1,24 @@
+Gra obiekt w kosmosie
+
+1. Na wgranym tle (obrazek wgrany w program) porusza siê poziomo obiekt.
+2. Zdefiniowany zosta³ kierunek poruszania siê obiektu i prêdkoœæ. Prêdkoœæ poruszania siê    obiektu bêdzie zmienna. Pozycja obiektu dziêki funkcji xPos=width/2 bêdzie wyœrodkowana.
+3. W program wgrana zosta³a tak¿e muzyka, jedna piosenka, dziêki bibliotece oscP5, a tak¿e    funkcji minim (informacja znaleziona na forum internetowym).
+4. Obiekt ma obramowanie i wype³nienie w innym kolorze. Jest to prostok¹t o zaokr¹glonych    bokach.
+5. Gra polega na tym, ¿e obiekt porusza siê poziomo w pozycji wyœrodkowanej. Od jednej    œciany do drugiej dziêki funkcji xDir=-xDir. W momencie, kiedy obiekt dotknie jednej ze    œcian, jego prêdkoœæ wzrasta. Dzieje siê tak dziêki funkcji xPos=xPos+(speed*xDir).
+6. Gracz musi nacisn¹æ poruszaj¹cy siê obiekt (prostok¹t), aby zdobyæ punkty,
+   ka¿de naciœniêcie na obiekt daje punkty.
+	1 naciœniêcie 1 punkt
+	2 naciœniêcie 2 punkty
+	3 naciœniecie 3 punkty
+	...
+	7 naciœniêcie 7 punktów (itd)
+   dzieje siê tak poniewa¿
+   if (dist(mouseX, mouseY, xPos, 300)<=60) – to decyduje o pozycji obiektu i o tym, ¿e na    powierzchni ca³ego obiektu w momencie nacisniêcia otrzymamy punkt.
+   Z ka¿dym naciœniêciem, obiekt porusza siê coraz szybciej. Ta sama funkcja definiuje tak¿e    prêdkoœæ poruszania siê obiektu oraz mo¿liwoœæ zdobycia punktów
+   punkty=punkty+speed
+   speed=speed+1
+8. Jeœli gracz naciœnie t³o zamiast obiektu, traci ¿ycie.
+   If (speed<1)
+   speed=speed-1
+9. £¹cznie gracz ma 7 ¿yæ, prêdkoœæ zawsze wzrasta o 1, pocz¹tkowa liczba punktów to 0. Przy    ka¿dej utracie ¿ycia, ich liczna maleje o 1. Informacje o tym umieszczane s¹ na górze    wgranego obrazka po lewej i prawej stronie w ró¿nych kolorach.
+10.W momencie utraty wszystkich ¿yæ na ekranie pojawia siê napis PRZEGRA£EŒ – ZACZNIJ OD    NOWA, gra zaczyna siê od nowa. Dzieje siê tak dziêki pêtli loop.  
